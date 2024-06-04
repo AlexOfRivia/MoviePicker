@@ -7,15 +7,8 @@
 class Movie
 {
     public:
-    void setMovie()
-    {
-        std::cout<<"\n\nEnter movie title: ";
-        std::cin>>movieTitle;
-    }
-    void printMovie()
-    {
-        std::cout<<movieTitle;
-    }
+    void setMovie();
+    void printMovie();
     private:
     std::string movieTitle;
 };
