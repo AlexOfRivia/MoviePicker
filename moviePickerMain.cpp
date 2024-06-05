@@ -15,6 +15,12 @@ void pickMovies(Movie movieArr[], Movie pickMovieArr[], int movAmt, int pickMovA
     }
 }
 
+/*
+TODO: 
+- Add removing movies
+- Add an option to add movies to the list
+- Add an option to edit movie position
+*/
 int main()
 {
     int movieAmount;
