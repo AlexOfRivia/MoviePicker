@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 #include "movie.h"
+#include "movie.cpp"
 
 void pickMovies(Movie movieArr[], Movie pickMovieArr[], int movAmt, int pickMovAmt)
 {
@@ -140,12 +141,17 @@ int main()
                         {
                             case 1:
                             {
-                                //Adding method
+                                movieList->addMovie(movieList,movieAmount);
+                                movieAmount++;
                                 break;
                             }
                             case 2:
                             {
-                                //Removing method
+                                movieList->removeMovie(movieList,movieAmount);
+                                if(movieAmount!=0)
+                                {
+                                    movieAmount--;
+                                }
                                 break;
                             }
                             case 3:
