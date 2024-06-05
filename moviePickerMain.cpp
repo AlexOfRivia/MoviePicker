@@ -25,7 +25,7 @@ int main()
 {
     int movieAmount;
     int pickedMoviesAmount;
-    int choice=0,choice2=0;
+    int choice=0,choice2=0,choice3=0;
     Movie *movieList = new Movie[movieAmount];
     Movie *pickedMoviesList = new Movie[pickedMoviesAmount];
 
@@ -86,7 +86,8 @@ int main()
                 std::cout<<"\n|1. Show Movie List.         |";
                 std::cout<<"\n|2. Clear Movie List.        |";
                 std::cout<<"\n|3. Clear Picked Movie List. |";
-                std::cout<<"\n|4. Return.                  |";
+                std::cout<<"\n|4. Add/Remove Movie.        |";
+                std::cout<<"\n|5. Return.                  |";
                 std::cout<<"\n|============================|";
                 std::cout<<"\nWhat Do You Want To Do: ";
                 std::cin>>choice2;
@@ -127,6 +128,34 @@ int main()
                         break;
                     }
                     case 4:
+                    {
+                        std::cout<<"\n|========LIST=MANAGER========|";
+                        std::cout<<"\n|1. Add Movie.               |";
+                        std::cout<<"\n|2. Removie Movie.           |";
+                        std::cout<<"\n|3. Return.                  |";
+                        std::cout<<"\n|============================|";
+                        std::cout<<"\nWhat Do You Want To Do: ";
+                        std::cin>>choice3;
+                        switch(choice3)
+                        {
+                            case 1:
+                            {
+                                //Adding method
+                                break;
+                            }
+                            case 2:
+                            {
+                                //Removing method
+                                break;
+                            }
+                            case 3:
+                            {
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                    case 5:
                     {
                         break;
                     }
