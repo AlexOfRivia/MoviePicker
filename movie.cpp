@@ -9,7 +9,7 @@ void Movie::setMovie()
 void Movie::addMovie(Movie movieArr[],int size)
 {
     int a = size;
-    movieArr[a].setMovie();
+    movieArr[a].setMovie(); //adds a movie to the last array index
 }
 
 void Movie::removeMovie(Movie movieArr[],int size)

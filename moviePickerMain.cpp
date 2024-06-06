@@ -5,6 +5,16 @@
 #include "movie.h"
 #include "movie.cpp"
 
+
+/*
+This short program is for those nights, when you want to watch 
+a movie - heck, maybe even pull off a movie marathon, but just 
+can't decide what to choose from a vast ocean of movies.
+
+I am well aware, that as of now, this interface could've been designed a little 
+bit better, however it has to do for now. Maybe in the future I'll make a GUI.
+*/
+
 void pickMovies(Movie movieArr[], Movie pickMovieArr[], int movAmt, int pickMovAmt)
 {
     srand(time(NULL));
@@ -15,24 +25,22 @@ void pickMovies(Movie movieArr[], Movie pickMovieArr[], int movAmt, int pickMovA
         index = 0;
     }
 }
+void editMovie(Movie movieArr[], int index)
+{
+    movieArr[(index-1)].setMovie();
+}
 
-/*
-TODO: 
-- Add removing movies
-- Add an option to add movies to the list
-- Add an option to edit movie position
-*/
 int main()
 {
-    int movieAmount;
-    int pickedMoviesAmount;
-    int choice=0,choice2=0,choice3=0;
+    int movieAmount; //Size of movie list array
+    int pickedMoviesAmount; //Size of picked movies array
+    int choice=0,choice2=0,choice3=0; //Basically just choices for the switches
     Movie *movieList = new Movie[movieAmount];
     Movie *pickedMoviesList = new Movie[pickedMoviesAmount];
 
     movieAmount=0;
     pickedMoviesAmount=0;
-    while(choice!=5)
+    while(choice!=5) //Main interface
     {
         std::cout<<"\n\n|=========MOVIE=PICKER=========|";
         std::cout<<"\n|1. Set Movie List.            |";
@@ -81,14 +89,15 @@ int main()
                 }
                 break;
             }
-            case 4:
+            case 4: //Managing interface
             {
                 std::cout<<"\n|========LIST=MANAGER========|";
                 std::cout<<"\n|1. Show Movie List.         |";
-                std::cout<<"\n|2. Clear Movie List.        |";
-                std::cout<<"\n|3. Clear Picked Movie List. |";
-                std::cout<<"\n|4. Add/Remove Movie.        |";
-                std::cout<<"\n|5. Return.                  |";
+                std::cout<<"\n|2. Edit Movies.             |";
+                std::cout<<"\n|3. Clear Movie List.        |";
+                std::cout<<"\n|4. Clear Picked Movie List. |";
+                std::cout<<"\n|5. Add/Remove Movie.        |";
+                std::cout<<"\n|6. Return.                  |";
                 std::cout<<"\n|============================|";
                 std::cout<<"\nWhat Do You Want To Do: ";
                 std::cin>>choice2;
@@ -110,6 +119,24 @@ int main()
                     }
                     case 2:
                     {
+                        int pos; //movie position to edit
+                        if(movieAmount==0)
+                        {
+                            std::cout<<"\nThere Are No Movies In Your Movie List. Try Adding Some!";
+                        } else {
+                            for(int i=0;i<movieAmount;i++)
+                            {
+                                std::cout<<"\n"<<(i+1)<<". ";
+                                movieList[i].printMovie();
+                            }
+                            std::cout<<"\nWhich Movie Position Do You Wish to Edit: ";
+                            std::cin>>pos;
+                            editMovie(movieList,pos);
+                        }
+                        break;
+                    }
+                    case 3:
+                    {
                         if(movieAmount==0)
                         {
                             std::cout<<"\nYour Movie List Is Already Empty. Feel Free To Add Some New Titles!";
@@ -118,7 +145,7 @@ int main()
                         }
                         break;
                     }
-                    case 3:
+                    case 4:
                     {
                         if(pickedMoviesAmount==0)
                         {
@@ -128,7 +155,7 @@ int main()
                         }
                         break;
                     }
-                    case 4:
+                    case 5:
                     {
                         std::cout<<"\n|========LIST=MANAGER========|";
                         std::cout<<"\n|1. Add Movie.               |";
@@ -142,15 +169,15 @@ int main()
                             case 1:
                             {
                                 movieList->addMovie(movieList,movieAmount);
-                                movieAmount++;
+                                movieAmount++; //Increments the movie list array size
                                 break;
                             }
                             case 2:
                             {
                                 movieList->removeMovie(movieList,movieAmount);
                                 if(movieAmount!=0)
-                                {
-                                    movieAmount--;
+                                {       
+                                    movieAmount--; //Decrements the movie list array size
                                 }
                                 break;
                             }
@@ -161,7 +188,7 @@ int main()
                         }
                         break;
                     }
-                    case 5:
+                    case 6:
                     {
                         break;
                     }

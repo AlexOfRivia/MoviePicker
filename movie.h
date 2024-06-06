@@ -6,10 +6,6 @@
 
 class Movie
 {
-    /*
-    TODO:
-    -Add methods
-    */
     public:
     void setMovie();
     void printMovie();
