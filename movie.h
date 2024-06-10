@@ -6,6 +6,8 @@
 
 class Movie
 {
+    /*TODO 
+    - Think about method to load and save lists*/
     public:
     void setMovie();
     void printMovie();
