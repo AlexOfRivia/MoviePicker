@@ -30,6 +30,12 @@ void editMovie(Movie movieArr[], int index)
     movieArr[(index-1)].setMovie();
 }
 
+/*TODO
+- Add saving movie list to a file
+- maybe load list from a file?
+- add saving a picked movie list to a file
+*/
+
 int main()
 {
     int movieAmount; //Size of movie list array
