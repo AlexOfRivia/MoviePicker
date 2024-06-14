@@ -2,8 +2,9 @@
 
 void Movie::setMovie()
 {
+    std::cin.ignore();
     std::cout<<"\n\nEnter movie title: ";
-    std::cin>>this->movieTitle;
+    std::getline(std::cin, this->movieTitle);
 }
 
 void Movie::addMovie(Movie movieArr[],int size)
@@ -30,6 +31,14 @@ void Movie::removeMovie(Movie movieArr[],int size)
     for(int j=(a-1);j<size;j++)
     {
         movieArr[j]=movieArr[j+1];
+    }
+}
+
+void Movie::saveToFile(Movie movieArr[], int size, std::ofstream& file)
+{
+    for(int i=0;i<size;i++)
+    {
+        file <<(i+1)<<". " << movieArr[i].movieTitle<<"\n";
     }
 }
 

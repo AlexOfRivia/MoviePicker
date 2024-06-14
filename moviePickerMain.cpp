@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 #include "movie.h"
+#include <fstream>
 #include "movie.cpp"
 
 
@@ -43,17 +44,19 @@ int main()
     int choice=0,choice2=0,choice3=0; //Basically just choices for the switches
     Movie *movieList = new Movie[movieAmount];
     Movie *pickedMoviesList = new Movie[pickedMoviesAmount];
+    std::string fileName;
 
     movieAmount=0;
     pickedMoviesAmount=0;
-    while(choice!=5) //Main interface
+    while(choice!=6) //Main interface
     {
         std::cout<<"\n\n|=========MOVIE=PICKER=========|";
         std::cout<<"\n|1. Set Movie List.            |";
         std::cout<<"\n|2. Pick Random Movies.        |";
         std::cout<<"\n|3. Show Picked Movies.        |";
         std::cout<<"\n|4. Manage Your Lists          |";
-        std::cout<<"\n|5. Exit                       |";
+        std::cout<<"\n|5. Save Movie List To File    |";
+        std::cout<<"\n|6. Exit                       |";
         std::cout<<"\n|==============================|";
         std::cout<<"\nWhat Do You Want To Do: ";
         std::cin>>choice;
@@ -202,6 +205,16 @@ int main()
                 break;
             }
             case 5:
+            {
+                std::cin.ignore();
+                std::cout<<"How Do You Want to Name Your List: ";
+                std::getline(std::cin,fileName);
+                std::ofstream movieFile(fileName);
+                movieList->saveToFile(movieList,movieAmount,movieFile);
+                movieFile.close();
+                break;
+            }
+            case 6:
             {
                 std::cout<<"\nThank You For Using My Movie Picker Program - Enjoy Your Show!";
                 break;
