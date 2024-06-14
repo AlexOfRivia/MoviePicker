@@ -32,7 +32,6 @@ void editMovie(Movie movieArr[], int index)
 }
 
 /*TODO
-- Add saving movie list to a file
 - maybe load list from a file?
 - add saving a picked movie list to a file
 */
