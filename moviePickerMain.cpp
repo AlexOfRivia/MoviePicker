@@ -101,10 +101,9 @@ int main()
                 std::cout<<"\n|========LIST=MANAGER========|";
                 std::cout<<"\n|1. Show Movie List.         |";
                 std::cout<<"\n|2. Edit Movies.             |";
-                std::cout<<"\n|3. Clear Movie List.        |";
-                std::cout<<"\n|4. Clear Picked Movie List. |";
-                std::cout<<"\n|5. Add/Remove Movie.        |";
-                std::cout<<"\n|6. Return.                  |";
+                std::cout<<"\n|3. Clear Lists.             |";
+                std::cout<<"\n|4. Add/Remove Movie.        |";
+                std::cout<<"\n|5. Return.                  |";
                 std::cout<<"\n|============================|";
                 std::cout<<"\nWhat Do You Want To Do: ";
                 std::cin>>choice2;
@@ -144,25 +143,43 @@ int main()
                     }
                     case 3:
                     {
-                        if(movieAmount==0)
+                        std::cout<<"\n|========LIST=MANAGER========|";
+                        std::cout<<"\n|1. Clear Movie List.        |";
+                        std::cout<<"\n|2. Clear Picked Movie List. |";
+                        std::cout<<"\n|3. Return.                  |";
+                        std::cout<<"\n|============================|";
+                        std::cout<<"\nWhat Do You Want To Do: ";
+                        std::cin>>choice3;
+                        switch(choice3)
                         {
-                            std::cout<<"\nYour Movie List Is Already Empty. Feel Free To Add Some New Titles!";
-                        } else {
-                            movieAmount=0;
+                            case 1:
+                            {
+                                if(movieAmount==0)
+                                {
+                                    std::cout<<"\nYour Movie List Is Already Empty. Feel Free To Add Some New Titles!";
+                                } else {
+                                    movieAmount=0;
+                                }
+                                break;
+                            }
+                            case 2:
+                            {
+                                if(pickedMoviesAmount==0)
+                                {
+                                    std::cout<<"\nYour Picked Movie List Is Already Empty. Feel Free To Add Some New Titles!";
+                                } else {
+                                    pickedMoviesAmount=0;
+                                }
+                            break;
+                            }
+                            case 3:
+                            {
+                                break;
+                            }
                         }
                         break;
                     }
                     case 4:
-                    {
-                        if(pickedMoviesAmount==0)
-                        {
-                            std::cout<<"\nYour Picked Movie List Is Already Empty. Feel Free To Add Some New Titles!";
-                        } else {
-                            pickedMoviesAmount=0;
-                        }
-                        break;
-                    }
-                    case 5:
                     {
                         std::cout<<"\n|========LIST=MANAGER========|";
                         std::cout<<"\n|1. Add Movie.               |";
@@ -195,7 +212,7 @@ int main()
                         }
                         break;
                     }
-                    case 6:
+                    case 5:
                     {
                         break;
                     }
