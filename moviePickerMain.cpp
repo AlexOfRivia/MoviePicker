@@ -33,7 +33,6 @@ void editMovie(Movie movieArr[], int index)
 
 /*TODO
 - maybe load list from a file?
-- add saving a picked movie list to a file
 */
 
 int main()
