@@ -37,15 +37,13 @@ void editMovie(Movie movieArr[], int index)
 
 int main()
 {
+    int choice=0,choice2=0,choice3=0; //Basically just choices for the switches
     int movieAmount; //Size of movie list array
     int pickedMoviesAmount; //Size of picked movies array
-    int choice=0,choice2=0,choice3=0; //Basically just choices for the switches
     Movie *movieList = new Movie[movieAmount];
     Movie *pickedMoviesList = new Movie[pickedMoviesAmount];
     std::string fileName;
 
-    movieAmount=0;
-    pickedMoviesAmount=0;
     while(choice!=6) //Main interface
     {
         std::cout<<"\n\n|=========MOVIE=PICKER=========|";
@@ -62,8 +60,10 @@ int main()
         {
             case 1:
             {
+                int a;
                 std::cout<<"\nEnter How Many Movies Would You Like To Choose From: ";
-                std::cin>>movieAmount;
+                std::cin>>a;
+                movieAmount=a;
                 for(int i=0;i<movieAmount;i++)
                 {
                     movieList[i].setMovie();
