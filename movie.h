@@ -13,6 +13,7 @@ class Movie
     void addMovie(Movie movieArr[],int size);
     void removeMovie(Movie movieArr[],int size);
     void saveToFile(Movie movieArr[], int size, std::ofstream& file);
+    void loadFromFile(Movie movieArr[], int size, std::ofstream& file);
     private:
     std::string movieTitle;
 };

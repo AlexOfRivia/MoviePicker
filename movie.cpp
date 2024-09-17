@@ -42,6 +42,15 @@ void Movie::saveToFile(Movie movieArr[], int size, std::ofstream& file)
     }
 }
 
+void Movie::loadFromFile(Movie movieArr[], int size, std::ofstream& file)
+{
+    /* PREPPING FOR LOADING MOVIE LIST FROM FILE
+    for(int i=0;i<size;i++)
+    {
+
+    }*/
+}
+
 void Movie::printMovie()
 {
     std::cout<<this->movieTitle;
